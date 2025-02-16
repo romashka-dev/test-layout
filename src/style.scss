@@ -475,9 +475,11 @@ body {
 
       &__input {
         padding: 10px;
+        min-height: 70px;
         font-size: $font-size-md;
         color: $white;
         background-color: $input-message-color;
+        border-radius: 0;
       }
 
       &__input::placeholder {
@@ -599,9 +601,10 @@ body {
           font-weight: 500;
           color: $primary-color;
           background-color: $form-button-color;
+          width: 137px;
         }
 
-        &__description .e-card__label {
+        &__description .e-card__label:nth-child(2) {
           margin-bottom: 30px;
         }
 
