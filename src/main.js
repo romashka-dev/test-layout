@@ -5,7 +5,13 @@ import * as Logo from './assets/'
 import * as Icons from './assets'
 import * as Illustrations from './assets'
 
-import { toggleMobileMenu, getPersonalMessage, getSelectText } from './scripts'
+import {
+  toggleMobileMenu,
+  getPersonalMessage,
+  getSelectText,
+  removeUser,
+  addUser,
+} from './scripts'
 
 document.querySelector('#app').innerHTML = `
   <div class="layout">
@@ -133,27 +139,27 @@ document.querySelector('#app').innerHTML = `
               <div class="group-tags">
                 <p class="group-tags__description">I would like to recognize the following group:</p>
                 <div class="group-tags__items">
-                  <div class="group-tags__item" id="tag-1">
+                  <div class="group-tags__item" id="1">
                     <p class="group-tags__text">Dorian Greene</p>
                     <div class="group-tags__close"></div>
                   </div>
-                  <div class="group-tags__item" id="tag-2">
+                  <div class="group-tags__item" id="2">
                     <p class="group-tags__text">Gus Levy</p>
                     <div class="group-tags__close"></div>
                   </div>
-                  <div class="group-tags__item" id="tag-3">
+                  <div class="group-tags__item" id="3">
                     <p class="group-tags__text">Jeremy Stevens</p>
                     <div class="group-tags__close"></div>
                   </div>
-                  <div class="group-tags__item" id="tag-4">
+                  <div class="group-tags__item" id="4">
                     <p class="group-tags__text">Brenda Owen</p>
                     <div class="group-tags__close"></div>
                   </div>
-                  <div class="group-tags__item" id="tag-5">
+                  <div class="group-tags__item" id="5">
                     <p class="group-tags__text">Michael LaRoche</p>
                     <div class="group-tags__close"></div>
                   </div>
-                  <div class="group-tags__item" id="tag-6">
+                  <div class="group-tags__item" id="6">
                     <p class="group-tags__text">Jeanette Lincoln</p>
                     <div class="group-tags__close"></div>
                   </div>
@@ -241,3 +247,5 @@ toggleMobileMenu()
 getPersonalMessage()
 getSelectText('.group-selects .js-select-criteria', '.form .js-label-criteria')
 getSelectText('.group-selects .js-select-points', '.form .js-label-points')
+removeUser()
+addUser()
