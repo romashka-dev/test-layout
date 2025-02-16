@@ -35,12 +35,6 @@ body {
     gap: 15px;
     padding: 20px 0;
 
-    @media screen and (min-width: 768px) {
-      flex-direction: row;
-      justify-content: space-between;
-      width: 100%;
-    }
-
     &__contacts {
       display: flex;
       justify-content: center;
@@ -88,12 +82,8 @@ body {
     border: none;
     cursor: pointer;
 
-    @media screen and (min-width: 768px) {
-      display: none;
-    }
-
     &__line {
-      width: 100%;
+      width: 80%;
       height: 4px;
       background-color: $primary-color;
       border-radius: 2px;
@@ -133,58 +123,15 @@ body {
     bottom: 50%;
     transform: rotate(45deg) translate(0, 50%);
   }
-
-  @media screen and (max-width: 768px) {
-    .header-navigtation {
-      display: none;
-      flex-direction: column;
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 2;
-      overflow-y: auto;
-      padding: 50px 40px;
-      background-color: #eee;
-      animation: burgerAnimation 0.4s;
-
-      &__list {
-        display: flex;
-        flex-direction: column;
-        row-gap: 20px;
-        color: $primary-color;
-      }
-    }
-  }
-
-  @keyframes burgerAnimation {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 }
 
 .page-section {
   padding-bottom: 60px;
 
-  @media screen and (min-width: 768px) {
-    padding-bottom: 100px;
-  }
-
   &__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    @media screen and (min-width: 768px) {
-      flex-wrap: wrap;
-    }
   }
 
   &__title {
@@ -203,14 +150,6 @@ body {
       margin-left: 10px;
       background-color: $primary-color;
       opacity: 0.2;
-
-      @media screen and (min-width: 768px) {
-        width: 460px;
-      }
-    }
-
-    @media screen and (min-width: 768px) {
-      flex: 1 1 100%;
     }
   }
 
@@ -218,11 +157,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
-
-    @media screen and (min-width: 768px) {
-      flex-direction: row;
-      flex: 1 1 100%;
-    }
   }
 
   .aside-panel {
@@ -324,10 +258,6 @@ body {
       font-size: $font-size-sm;
       text-transform: capitalize;
     }
-
-    @media screen and (min-width: 768px) {
-      width: 250px;
-    }
   }
 
   .main-content {
@@ -374,7 +304,7 @@ body {
         gap: 10px;
         background-color: $tag-color;
         padding: 2px;
-        z-index: 6;
+        z-index: 1;
         transition: background-color 0.15s ease-in;
         cursor: pointer;
       }
@@ -494,23 +424,16 @@ body {
         flex-direction: column;
         gap: 10px;
 
-        @media screen and (min-width: 768px) {
-          flex-direction: row;
-        }
-
         &__button {
           padding: 4px 12px;
           font-size: $font-size-md;
+          font-weight: 600;
           color: $white;
           text-transform: capitalize;
           background-color: $form-button-color;
           border: none;
           cursor: pointer;
           transition: background-color 0.15s ease-in;
-
-          @media screen and (min-width: 768px) {
-            width: 160px;
-          }
         }
 
         &__button:hover {
@@ -519,10 +442,6 @@ body {
 
         &__input {
           display: flex;
-
-          @media screen and (min-width: 768px) {
-            flex-basis: 500px;
-          }
         }
 
         .input {
@@ -550,10 +469,6 @@ body {
           display: flex;
           flex-direction: column;
           gap: 10px;
-
-          @media screen and (min-width: 768px) {
-            flex-direction: row;
-          }
         }
 
         &__column:first-child {
@@ -564,14 +479,6 @@ body {
             width: 100%;
             height: 200px;
             object-fit: cover;
-
-            @media screen and (min-width: 768px) {
-              width: 280px;
-            }
-          }
-
-          @media screen and (min-width: 768px) {
-            flex-direction: row;
           }
         }
 
@@ -602,7 +509,6 @@ body {
           font-weight: 500;
           color: $primary-color;
           background-color: $form-button-color;
-          width: 137px;
         }
 
         &__description .e-card__label:nth-child(2) {
@@ -620,5 +526,121 @@ body {
         }
       }
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .page-header {
+    .header-top {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .burger-menu {
+      display: none;
+    }
+
+    .header-navigtation {
+      &__list {
+        flex: 1;
+      }
+    }
+  }
+
+  .page-section {
+    padding-bottom: 100px;
+
+    &__container {
+      flex-wrap: wrap;
+    }
+
+    &__title {
+      flex: 1 1 100%;
+
+      &:after {
+        width: 460px;
+      }
+    }
+
+    &__content {
+      flex-direction: row;
+      flex: 1 1 100%;
+    }
+
+    .aside-panel {
+      width: 250px;
+    }
+
+    .main-content .form .e-card {
+      &__content {
+        flex-direction: row;
+      }
+
+      &__column:first-child {
+        flex-direction: row;
+
+        .e-card__image {
+          width: 280px;
+        }
+      }
+
+      &__description {
+        width: 307px;
+        height: 200px;
+      }
+    }
+
+    .send-form .main-content .form .send-form {
+      flex-direction: row;
+
+      &__button {
+        min-width: 130px;
+      }
+      &__button.button-review {
+        margin-left: 100px;
+      }
+
+      &__input {
+        flex: 500px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-header {
+    .header-navigtation {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      overflow-y: auto;
+      padding: 50px 40px;
+      background-color: #eee;
+      animation: burgerAnimation 0.4s;
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+@keyframes burgerAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

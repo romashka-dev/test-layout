@@ -232,7 +232,7 @@ document.querySelector('#app').innerHTML = `
                       <label class="label" for="label"></label>
                       <input class="input" type="input" id="input" placeholder="Enter email address" />
                     </div>
-                    <button class="send-form__button" type="button">Review awards</button>
+                    <button class="send-form__button button-review" type="button">Review awards</button>
                   </div>
                 </div>
               </form>
