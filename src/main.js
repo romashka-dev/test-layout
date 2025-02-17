@@ -135,80 +135,83 @@ document.querySelector('#app').innerHTML = `
             </aside>
 
             <div class="main-content">
-              <h2 class="main-content__title">Recognize</h2>
-              <div class="group-tags">
-                <p class="group-tags__description">I would like to recognize the following group:</p>
-                <div class="group-tags__items">
-                  <div class="group-tags__item" id="1">
-                    <p class="group-tags__text">Dorian Greene</p>
-                    <div class="group-tags__close"></div>
-                  </div>
-                  <div class="group-tags__item" id="2">
-                    <p class="group-tags__text">Gus Levy</p>
-                    <div class="group-tags__close"></div>
-                  </div>
-                  <div class="group-tags__item" id="3">
-                    <p class="group-tags__text">Jeremy Stevens</p>
-                    <div class="group-tags__close"></div>
-                  </div>
-                  <div class="group-tags__item" id="4">
-                    <p class="group-tags__text">Brenda Owen</p>
-                    <div class="group-tags__close"></div>
-                  </div>
-                  <div class="group-tags__item" id="5">
-                    <p class="group-tags__text">Michael LaRoche</p>
-                    <div class="group-tags__close"></div>
-                  </div>
-                  <div class="group-tags__item" id="6">
-                    <p class="group-tags__text">Jeanette Lincoln</p>
-                    <div class="group-tags__close"></div>
-                  </div>
-                </div>
-                <button class="group-tags__button">Add user</button>
-              </div>
-
-              <div class="group-colleagues">
-                <p class="group-colleagues__description">I’d like to recognize<span class="group-colleagues__keyword"> a group of colleagues </span> for the <span class="group-colleagues__keyword">Peer-to-Peer Program</span></p>
-                <div class="group-selects">
-                  <div class="group-selects__item">
-                    <label class="group-selects__label" for="criteria">Criteria</label>
-                    <select class="group-selects__select js-select-criteria" id="criteria">
-                      <option value="technical-excellence">Technical excellence</option>
-                      <option value="soft-skills">Soft skills</option>
-                      <option value="critical-thinking">Critical thinking</option>
-                      <option value="energy-and-enthusiasm">Energy and enthusiasm</option>
-                      <option value="experience">Experience</option>
-                    </select>
-                  </div>
-
-                  <div class="group-selects__item">
-                    <label class="group-selects__label" for="points">Points</label>
-                    <select class="group-selects__select js-select-points" id="points">
-                      <option value="50">50</option>
-                      <option value="40">40</option>
-                      <option value="30">30</option>
-                      <option value="20">20</option>
-                      <option value="10">10</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div class="group-message">
-                <label class="group-message__label" for="message">Personal message:</label>
-                <textarea class="group-message__input" id="message" rows="2" placeholder="Enter your message here..."></textarea>
-              </div>
-
               <form class="form" action="#" method="POST">
                 <div class="form__container">
+                  <h2 class="form__title">Recognize</h2>
+                  <div class="group-tags">
+                    <p class="group-tags__description">I would like to recognize the following group:</p>
+                    <div class="group-tags__items">
+                      <div class="group-tags__item" id="1">
+                        <p class="group-tags__text">Dorian Greene</p>
+                        <div class="group-tags__close"></div>
+                      </div>
+                      <div class="group-tags__item" id="2">
+                        <p class="group-tags__text">Gus Levy</p>
+                        <div class="group-tags__close"></div>
+                      </div>
+                      <div class="group-tags__item" id="3">
+                        <p class="group-tags__text">Jeremy Stevens</p>
+                        <div class="group-tags__close"></div>
+                      </div>
+                      <div class="group-tags__item" id="4">
+                        <p class="group-tags__text">Brenda Owen</p>
+                        <div class="group-tags__close"></div>
+                      </div>
+                      <div class="group-tags__item" id="5">
+                        <p class="group-tags__text">Michael LaRoche</p>
+                        <div class="group-tags__close"></div>
+                      </div>
+                      <div class="group-tags__item" id="6">
+                        <p class="group-tags__text">Jeanette Lincoln</p>
+                        <div class="group-tags__close"></div>
+                      </div>
+                    </div>
+                    <button class="group-tags__button" type="button">Add user</button>
+                  </div>
+
+                  <div class="group-colleagues">
+                    <p class="group-colleagues__description">I’d like to recognize<span class="group-colleagues__keyword"> a group of colleagues </span> for the <span class="group-colleagues__keyword">Peer-to-Peer Program</span></p>
+                    <div class="group-selects">
+                      <div class="group-selects__item">
+                        <label class="group-selects__label" for="criteria">Criteria</label>
+                        <div class="group-selects__wrapper">
+                          <select class="group-selects__select js-select-criteria" id="criteria">
+                            <option value="technical-excellence">Technical excellence</option>
+                            <option value="soft-skills">Soft skills</option>
+                            <option value="critical-thinking">Critical thinking</option>
+                            <option value="energy-and-enthusiasm">Energy and enthusiasm</option>
+                            <option value="experience">Experience</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="group-selects__item">
+                        <label class="group-selects__label" for="points">Points</label>
+                        <div class="group-selects__wrapper">
+                          <select class="group-selects__select js-select-points" id="points">
+                            <option value="50">50</option>
+                            <option value="40">40</option>
+                            <option value="30">30</option>
+                            <option value="20">20</option>
+                            <option value="10">10</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="group-message">
+                    <label class="group-message__label" for="message">Personal message:</label>
+                    <textarea class="group-message__input" id="message" rows="2" placeholder="Enter your message here..."></textarea>
+                  </div>
+
                   <div class="e-card">
                     <h2 class="e-card__title">E-Card preview:</h2>
                     <div class="e-card__content">
                       <div class="e-card__column e-card__column--primary">
                         <img class="e-card__image" src="${Illustrations.ecardImage1}" alt="Celebration" width="280" height="200">
                         <div class="e-card__description">
-                          <p class="e-card__label js-label-criteria" id="criteria">Criteria: <span></span></p>
-                          <p class="e-card__label js-label-points" id="points">Points: <span></span></p>
+                          <p class="e-card__label" id="criteria">Criteria: <span class="js-label-criteria"></span></p>
+                          <p class="e-card__label" id="points">Points: <span class="js-label-points"></span></p>
                           <p class="e-card__text">Your personal message ...</p>
                           <p class="e-card__author">Anna Parker</p>
                           <p class="e-card__date">Award date: 10/19/2015</p>
@@ -226,6 +229,7 @@ document.querySelector('#app').innerHTML = `
                       </div>
                     </div>
                   </div>
+
                   <div class="send-form">
                     <button class="send-form__button" type="submit">Send copy to:</button>
                     <div class="send-form__input">

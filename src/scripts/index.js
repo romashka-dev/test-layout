@@ -1,8 +1,10 @@
 export const toggleMobileMenu = () => {
   const burgerMenu = document.querySelector('.burger-menu')
   const navigationMenu = document.querySelector('.header-navigtation')
+  const body = document.getElementsByTagName('body')
 
   burgerMenu.addEventListener('click', () => {
+    body[0].classList.toggle('isLocked')
     burgerMenu.classList.toggle('active')
     navigationMenu.classList.toggle('active')
   })
@@ -56,7 +58,9 @@ export const addUser = () => {
   )
   let userId = document.querySelectorAll('.group-tags__item').length + 1
 
-  trigger.addEventListener('click', () => {
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault()
+
     const userName = prompt('Enter user name:')
 
     if (!userName) return

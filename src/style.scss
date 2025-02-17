@@ -263,10 +263,12 @@ body {
   .main-content {
     flex: 1 1 75%;
 
-    &__title {
-      margin-bottom: 30px;
-      font-size: $font-size-xxxl;
-      text-transform: uppercase;
+    .form {
+      &__title {
+        margin-bottom: 30px;
+        font-size: $font-size-xxxl;
+        text-transform: uppercase;
+      }
     }
 
     .group-tags {
@@ -319,8 +321,8 @@ body {
 
       &__close {
         position: relative;
-        width: 10px;
-        height: 10px;
+        width: 14px;
+        height: 14px;
 
         &::before,
         &::after {
@@ -382,13 +384,33 @@ body {
           flex-basis: 60px;
         }
 
+        &__wrapper {
+          position: relative;
+
+          &::after {
+            content: url('./assets/images/icons/select-arrow.png');
+            position: absolute;
+            right: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $border-color;
+            padding: 3px;
+            pointer-events: none;
+            opacity: 0.5;
+          }
+        }
+
         &__select {
           width: 164px;
           font-size: 13px;
           padding: 4px;
           margin-left: 22px;
+          background-color: $white;
           border: 2px solid $border-color;
           cursor: pointer;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
         }
       }
     }
@@ -418,112 +440,110 @@ body {
       }
     }
 
-    .form {
-      .send-form {
+    .send-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &__button {
+        padding: 4px 12px;
+        font-size: $font-size-md;
+        font-weight: 600;
+        color: $white;
+        text-transform: capitalize;
+        background-color: $form-button-color;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.15s ease-in;
+      }
+
+      &__button:hover {
+        background-color: $form-button-hover-color;
+      }
+
+      &__input {
+        display: flex;
+      }
+
+      .input {
+        height: 100%;
+        width: 100%;
+        padding: 4px 8px;
+        border: 2px solid $border-color;
+      }
+
+      .input::placeholder {
+        font-size: $font-size-md;
+      }
+    }
+
+    .e-card {
+      margin-bottom: 30px;
+
+      &__title {
+        margin-bottom: 10px;
+        font-size: $font-size-md;
+        text-transform: uppercase;
+      }
+
+      &__content {
         display: flex;
         flex-direction: column;
         gap: 10px;
+      }
 
-        &__button {
-          padding: 4px 12px;
-          font-size: $font-size-md;
-          font-weight: 600;
-          color: $white;
-          text-transform: capitalize;
-          background-color: $form-button-color;
-          border: none;
-          cursor: pointer;
-          transition: background-color 0.15s ease-in;
-        }
+      &__column:first-child {
+        display: flex;
+        flex-direction: column;
 
-        &__button:hover {
-          background-color: $form-button-hover-color;
-        }
-
-        &__input {
-          display: flex;
-        }
-
-        .input {
-          height: 100%;
+        .e-card__image {
           width: 100%;
-          padding: 4px 8px;
-          border: 2px solid $border-color;
-        }
-
-        .input::placeholder {
-          font-size: $font-size-md;
+          height: 200px;
+          object-fit: cover;
         }
       }
 
-      .e-card {
-        margin-bottom: 30px;
-
-        &__title {
-          margin-bottom: 10px;
-          font-size: $font-size-md;
-          text-transform: uppercase;
-        }
-
-        &__content {
+      &__column:last-child {
+        .group-illustrations {
           display: flex;
-          flex-direction: column;
+          flex-wrap: wrap;
           gap: 10px;
-        }
+          max-width: 180px;
 
-        &__column:first-child {
-          display: flex;
-          flex-direction: column;
-
-          .e-card__image {
-            width: 100%;
-            height: 200px;
+          &__image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
             object-fit: cover;
           }
         }
+      }
 
-        &__column:last-child {
-          .group-illustrations {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            max-width: 180px;
+      &__description {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $primary-color;
+        background-color: $form-button-color;
+      }
 
-            &__image {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              width: 50px;
-              height: 50px;
-              object-fit: cover;
-            }
-          }
-        }
+      &__description .e-card__label:nth-child(2) {
+        margin-bottom: 30px;
+      }
 
-        &__description {
-          display: flex;
-          flex-direction: column;
-          flex: 1;
-          padding: 10px;
-          font-size: 9px;
-          font-weight: 500;
-          color: $primary-color;
-          background-color: $form-button-color;
-        }
+      &__description .e-card__text {
+        margin-bottom: 15px;
+        color: $white;
+      }
 
-        &__description .e-card__label:nth-child(2) {
-          margin-bottom: 30px;
-        }
-
-        &__description .e-card__text {
-          margin-bottom: 15px;
-          color: $white;
-        }
-
-        &__description .e-card__date {
-          margin-top: auto;
-          text-align: end;
-        }
+      &__description .e-card__date {
+        margin-top: auto;
+        text-align: end;
       }
     }
   }
@@ -588,10 +608,11 @@ body {
       &__description {
         width: 307px;
         height: 200px;
+        font-size: $font-size-sm;
       }
     }
 
-    .send-form .main-content .form .send-form {
+    .main-content .form .send-form {
       flex-direction: row;
 
       &__button {
@@ -609,6 +630,10 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  body.isLocked {
+    overflow: hidden;
+  }
+
   .page-header {
     .header-navigtation {
       display: none;

@@ -7,6 +7,7 @@ import lightBulbIcon from './images/icons/lightbulb.png'
 import trophyIcon from './images/icons/trophy.png'
 import badgeIcon from './images/icons/badge.png'
 import closeIcon from './images/icons/close.png'
+import arrowIcon from './images/icons/select-arrow.png'
 
 import itemIllustration1 from './images/illustrations/illustration_1.jpg'
 import itemIllustration2 from './images/illustrations/illustration_2.jpg'
@@ -32,6 +33,7 @@ export {
   trophyIcon,
   badgeIcon,
   closeIcon,
+  arrowIcon,
   itemIllustration1,
   itemIllustration2,
   itemIllustration3,
